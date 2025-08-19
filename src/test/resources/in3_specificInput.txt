@@ -1,0 +1,13 @@
+
+  
+13w0
+13.-1
+-1e-20
+-1e-20;
+-1e-10  
+-0
+NaN
+Nan
+INF
+Infinity
+-Infinity
