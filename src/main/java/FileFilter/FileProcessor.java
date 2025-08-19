@@ -78,13 +78,29 @@ public class FileProcessor {
       integers.add(Long.parseLong(line));
       return;
     } catch (NumberFormatException e) {}
+
     try {
-      double val = Double.parseDouble(line);
-      if (!Double.isInfinite(val) && !Double.isNaN(val)) {
-        doubles.add(Double.parseDouble(line));
-        return;
-      }
+      doubles.add(localParseDouble(line));
+      return;
     } catch (NumberFormatException e) {}
+
     strings.add(line);
+  }
+
+
+  private double localParseDouble(String line) {
+    double val = Double.parseDouble(line);
+    char[] doubleDefiningChars = new char[] {'E', 'e', '.'};
+    boolean containsDoubleDefiningChar = false;
+    for (int i = 0; i < doubleDefiningChars.length; i++) {
+      if (line.indexOf(doubleDefiningChars[i]) >= 0) {
+        containsDoubleDefiningChar = true;
+      }
+    }
+    if (!Double.isFinite(val) || !containsDoubleDefiningChar) {
+      throw new NumberFormatException();
+    }
+
+    return val;
   }
 }

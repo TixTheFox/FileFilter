@@ -96,6 +96,7 @@ public class StatsPrinter {
     if (integers.isEmpty()) {
       System.out.println("Статистика по целым числам");
       System.out.println("Число элементов: 0");
+      return;
     }
 
     int size = integers.size();
@@ -128,6 +129,7 @@ public class StatsPrinter {
     if (strings.isEmpty()) {
       System.out.println("Статистика по строкам");
       System.out.println("Число элементов: 0");
+      return;
     }
 
     int size = strings.size();
