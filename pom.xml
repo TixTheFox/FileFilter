@@ -57,6 +57,15 @@
                     <mainClass>MainClass</mainClass>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.5.0</version>
+                <configuration>
+                    <release>21</release>
+                    <sourceFileExcludes>MainClass.java</sourceFileExcludes>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>
